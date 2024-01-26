@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Plastic Components Showcase</title>
+</head>
+<body>
+    <nav class="container-fluid nav-bar">
+		
+        <ul>
+			<img src="images\title_logo.png" alt="Betega Logo" style="height: 60px; vertical-align: middle; margin-right: 0px;">			
+            <li><strong style="font-size: larger; color: black; font-weight: bold;">Betega S.A. de C.V.</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#special-petitions">Pedidos personalizables</a></li>
+            <li><a href="#contact" role="button" style="background-color: blue;">Contacto</a></li>
+        </ul>
+		<ul class="language-switcher">
+			<li><a href="index_en.html">English</a></li>
+			<li><a href="index_es.html" class="active-language">Español</a></li>
+		</ul>
+    </nav>
+    <main class="container">
+		<section id="products">
+			<hgroup>
+				<h2><strong style="color: black; font-weight: bold;">Ordenar Productos</strong></h2>
+				<h3><strong style="color: black;">Componentes de Plástico de Alta Calidad</strong> </h3>
+			</hgroup>
+			
+			<!-- Fila de Productos -->
+			<div class="row">
+				<!-- Producto 1 -->
+				<figure class="product">
+					<figcaption><a href="#" target="_blank">Envase 1</a></figcaption>
+					<img src="https://www.sajoplast.com.co/images/producto/envase-1-galon-3.jpg" alt="Botellas de Plástico" />
+					<p>Descripción del Contenedor 1: Este contenedor es ideal para...</p>
+				    <div class="order-options">
+						<p>Precio: 10ct/pieza</p>
+						<label for="quantity">Cantidad:</label>
+						<input type="number" id="cantidad1" name="quantity" min="200"  placeholder="Min 200 piezas">
+						<button type="button" onclick="addToCart('Envase 1', 10, document.getElementById('cantidad1').value, 'es')">Agregar al carrito</button>
+					</div>	
+				</figure>
+
+				<!-- Producto 2 -->
+				<figure class="product">
+					<figcaption><a href="#" target="_blank">Envase 2</a></figcaption>
+					<img src="https://www.fumisan.es/11917-large_default/botella-biberon-cocina-rojo-ketchup-salsas.jpg" alt="Botellas de Plástico" />
+					<p>Descripción del Contenedor 2: Esta botella es perfecta para...</p>
+					<div class="order-options">
+						<p>Precio: 10ct/pieza</p>
+						<label for="quantity">Cantidad:</label>
+						<input type="number" id="cantidad2" name="quantity" min="200"  placeholder="Min 200 piezas">
+						<button type="button" onclick="addToCart('Envase 2', 10, document.getElementById('cantidad2').value, 'es')">Agregar al carrito</button>
+					</div>
+				</figure>
+			</div>
+			<div class="row">
+                <figure class="product">
+                    <figcaption><a href="#" target="_blank">Envase 3</a></figcaption>
+                    <img src="https://www.carcarepassion.com/pub/media/mf_webp/jpg/media/catalog/product/cache/a6736622c008c37900a2a4cd253338a5/b/o/bote-ketchup-600x600_1.webp" alt="Botellas de Plástico" />
+                    <p>Descripción del Contenedor 3: Este contenedor es ideal para...</p>
+				    <div class="order-options">
+						<p>Precio: 10ct/pieza</p>
+						<label for="quantity">Cantidad:</label>
+						<input type="number" id="cantidad3" name="quantity" min="200"  placeholder="Min 200 piezas">
+						<button type="button" onclick="addToCart('Envase 3', 10, document.getElementById('cantidad3').value,'es')">Agregar al carrito</button>
+					</div>                
+				</figure>
+
+                <figure class="product">
+                    <figcaption><a href="#" target="_blank">Envase 4</a></figcaption>
+                    <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/f1accf7c-d97b-48f7-ac37-f9a107c1f95c.af772050ef25ee14b94b187d8886e821.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Botellas de Plástico" />
+                    <p>Descripción del Contenedor 4: Esta botella es perfecta para...</p>
+				    <div class="order-options">
+						<p>Precio: 10ct/pieza</p>
+						<label for="quantity">Cantidad:</label>
+						<input type="number" id="cantidad4" name="quantity" min="200"  placeholder="Min 200 piezas">
+						<button type="button" onclick="addToCart('Envase 1', 10, document.getElementById('cantidad4').value,'es')">Agregar al carrito</button>
+					</div>               
+			   </figure>
+			   <button type="button" onclick="window.location.href='cart_es.html'">Carrito de compras</button>
+                <h3><strong style="color: black; font-weight: bold;">Variedad de formas, tamaños y colores</strong></h3>
+                <p>Ofrecemos una amplia gama de formas y tamaños para satisfacer tus necesidades.</p>
+                <p>Elige entre un amplio espectro de colores para tus componentes de plástico. Haz que tu producto se destaque.</p>
+            </section>
+        </div>
+    </main>
+		<section aria-label="Pedidos personalizables">
+			<div class="container">
+				<article id="special-petitions">
+					<hgroup>
+						<h2>Pedidos Especiales</h2>
+						<h3>Personaliza Tu Producto</h3>
+					</hgroup>
+					<form id="new-user-form" class="form-horizontal">
+						<div class="form-group">
+							<label for="product-type">Nombre Completo:</label>
+							<input type="text" id="fullname" name="fullname" aria-label="Full Name" required />
+						</div>
+						
+						<div class="form-group">
+							<label for="product-type">Tipo de Producto:</label>
+							<input type="text" id="product-type" name="product-type" aria-label="Type of Product" required />
+						</div>
+						
+						<div class="form-group">
+							<label for="quantity">Cantidad de Piezas:</label>
+							<input type="number" id="quantity" name="quantity" placeholder="min 200 piezas" aria-label="Quantity of Pieces" required min="1" />
+						</div>
+						
+						<div class="form-group">
+							<label for="dimensions">Dimensiones:</label>
+							<input type="text" id="dimensions" name="dimensions" aria-label="Dimensions" />
+						</div>
+						
+						<div class="form-group">
+							<label for="color">Color:</label>
+							<input type="color" id="color" name="color" aria-label="Color" />
+						</div>
+						<div class="form-group">
+							<label for="product-type">Correo Electrónico:</label>
+							<input type="email" id="email" name="email" aria-label="Your Email" required />
+						</div>
+						<div class="form-group">
+							<label for="phone">Número Telefónico:</label>
+							<input type="tel" id="phone" name="phone" aria-label="Phone Number" pattern="[0-9]{10}" required />
+						</div>
+						<button type="submit" onclick="event.preventDefault()">Enviar Solicitud</button>
+					</form>
+				</article>
+			</div>
+		</section>
+		<section id="contact" class="container">
+			<!-- Aquí puedes agregar tus datos de contacto -->
+			<h2><strong style="color: black; font-weight: bold;">Contactanos para mas información</strong></h2>
+			<p><strong>Ingenieria Industrial Betega S.A. de C.V.</strong></p>
+			<p><span class="info-label">Correo Electrónico:</span> <span class="info-content">inssa@prodigy.net.mx</span></p>
+			<p><span class="info-label">Telefono:</span> <span class="info-content">55-55-13-85-38</span></p>
+			<p><span class="info-label">&nbsp;</span> <span class="info-content">55-55-13-96-42</span></p>
+			<p><span class="info-label">Direccion:</span> <span class="info-content">Avenida Taxqueña #1970 Altos, Colonia</span></p>
+			<p><span class="info-label">&nbsp;</span> <span class="info-content">Colonia San Francisco Culhuacan Coyoacan 04260 CDMX</span></p>
+		</section>
+    <footer class="container">
+        <small><a href="#">Términos y Condiciones</a> • <a href="#">Política de Privacidad</a></small>
+    </footer>
+	<script defer src="cart.js"></script>
+	<div id="cart-message" style="display: none;"></div>
+</body>
+</html> 

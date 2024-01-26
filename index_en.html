@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Plastic Components Showcase</title>
+</head>
+<body>
+    <nav class="container-fluid nav-bar">
+        <ul>
+			<img src="images\title_logo.png" alt="Betega Logo" style="height: 60px; vertical-align: middle; margin-right: 0px;">			
+            <li><strong style="font-size: larger; color: black; font-weight: bold;">Betega S.A. de C.V.</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#special-petitions">Special Petitions</a></li>
+            <li><a href="#contact" role="button" style="background-color: blue;">Contact</a></li>
+        </ul>
+		<ul class="language-switcher">
+			<li><a href="index_en.html" class="active-language">English</a></li>
+			<li><a href="index_es.html">Español</a></li>
+		</ul>
+    </nav>
+    <main class="container">
+		<section id="products">
+			<hgroup>
+				<h2><strong style="color: black; font-weight: bold;">Order Products</strong></h2>
+				<h3><strong style="color: black;">Quality plastic components</strong> </h3>
+			</hgroup>
+			
+			<!-- Fila de Productos -->
+			<div class="row">
+				<!-- Producto 1 -->
+				<figure class="product">
+					<figcaption><a href="#" target="_blank">Container 1</a></figcaption>
+					<img src="https://www.sajoplast.com.co/images/producto/envase-1-galon-3.jpg" alt="Botellas de Plástico" />
+					<p>Description Container 1: This container is ideal for...</p>
+					<div class="order-options">
+						<p>Price: 10ct/piece</p>
+						<label for="quantity">Quantity:</label>
+						<input type="number" id="quantity1" name="quantity" min="200"  placeholder="Min 200 pieces">
+						<button type="button" onclick="addToCart('Container 1', 10, document.getElementById('quantity1').value,'en')">Add to the shop list</button>
+					</div>					
+				</figure>
+
+				<!-- Producto 2 -->
+				<figure class="product">
+					<figcaption><a href="#" target="_blank">Container 2</a></figcaption>
+					<img src="https://www.fumisan.es/11917-large_default/botella-biberon-cocina-rojo-ketchup-salsas.jpg" alt="Botellas de Plástico" />
+					<p>Description Container 2: This bottle is perfect for...</p>
+					<div class="order-options">
+						<p>Price: 10ct/piece</p>
+						<label for="quantity">Quantity:</label>
+						<input type="number" id="quantity2" name="quantity" min="200"  placeholder="Min 200 pieces">
+						<button type="button" onclick="addToCart('Container 2', 10, document.getElementById('quantity2').value,'en')">Add to the shop list</button>
+					</div>					
+				</figure>
+			</div>
+			<div class="row">
+                <figure class="product">
+                    <figcaption><a href="#" target="_blank">Container 3</a></figcaption>
+                    <img src="https://www.carcarepassion.com/pub/media/mf_webp/jpg/media/catalog/product/cache/a6736622c008c37900a2a4cd253338a5/b/o/bote-ketchup-600x600_1.webp" alt="Botellas de Plástico" />
+                    <p>Description Container 3: This container is ideal for...</p>
+					<div class="order-options">
+						<p>Price: 10ct/piece</p>
+						<label for="quantity">Quantity:</label>
+						<input type="number" id="quantity3" name="quantity" min="200"  placeholder="Min 200 pieces">
+						<button type="button" onclick="addToCart('Container 3', 10, document.getElementById('quantity3').value,'en')">Add to the shop list</button>
+					</div>	                
+				</figure>
+
+                <figure class="product">
+                    <figcaption><a href="#" target="_blank">Container 4</a></figcaption>
+                    <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/f1accf7c-d97b-48f7-ac37-f9a107c1f95c.af772050ef25ee14b94b187d8886e821.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Botellas de Plástico" />
+                    <p>Description Container 4: This bottle is perfect for...</p>
+					<div class="order-options">
+						<p>Price: 10ct/piece</p>
+						<label for="quantity">Quantity:</label>
+						<input type="number" id="quantity4" name="quantity" min="200"  placeholder="Min 200 pieces">
+						<button type="button" onclick="addToCart('Container 4', 10, document.getElementById('quantity4').value,'en')">Add to the shop list</button>
+					</div>	                
+				</figure>
+
+				<button type="button" onclick="window.location.href='cart_en.html'">Shopping list</button>
+
+                <h3><strong style="color: black; font-weight: bold;">Variety of Shapes, Sizes and Colors</strong></h3>
+                <p>We offer a diverse range of shapes and sizes to suit your needs. Choose from a broad spectrum of colors for your plastic components. Make your product stand out. </p>
+				<p>Customizable options available.</p>
+				<!--                 
+				<h3>Color Options</h3>
+                <p>Choose from a broad spectrum of colors for your plastic components.  
+				-->
+            </section>
+        </div>
+    </main>
+	<section aria-label="Special Orders">
+		<div class="container">
+			<article id="special-petitions">
+				<hgroup>
+					<h2>Special Orders</h2>
+					<h3>Customize Your Product</h3>
+				</hgroup>
+					<form id="new-user-form" class="form-horizontal">
+					<div class="form-group" style="clear: both;">
+						<label for="fullname">Full Name:</label>
+						<input type="text" id="fullname" name="fullname" aria-label="Full Name" required />
+					</div>
+					
+					<div class="form-group" style="clear: both;">
+						<label for="product-type">Type of Product:</label>
+						<input type="text" id="product-type" name="product-type" aria-label="Type of Product" required />
+					</div>
+					
+					<div class="form-group" style="clear: both;">
+						<label for="quantity">Quantity of Pieces:</label>
+						<input type="number" id="quantity" name="quantity" placeholder="min 200 pieces" aria-label="Quantity of Pieces" required min="1" />
+					</div>
+					
+					<div class="form-group" style="clear: both;">
+						<label for="dimensions">Dimensions:</label>
+						<input type="text" id="dimensions" name="dimensions"  aria-label="Dimensions" />
+					</div>
+					
+					<div class="form-group" style="clear: both;">
+						<label for="color">Color:</label>
+						<input type="color" id="color" name="color" aria-label="Color" />
+					</div>
+					
+					<div class="form-group" style="clear: both;">
+						<label for="phone">Email:</label>
+						<input type="email" id="email" name="email" aria-label="Your Email" required />
+					</div>
+					
+					<div class="form-group" style="clear: both;">
+						<label for="phone">Phone Number:</label>
+						<input type="tel" id="phone" name="phone" aria-label="Phone Number" pattern="[0-9]{10}" required />
+					</div>
+					
+					<button type="submit" onclick="event.preventDefault()">Submit Request</button>
+				</form>
+			</article>
+		</div>
+	</section>
+		<section id="contact" class="container">
+			<!-- Aquí puedes agregar tus datos de contacto -->
+			<h2><strong style="color: black; font-weight: bold;">Contact us for more information</strong></h2>
+			<p><strong>Ingenieria Industrial Betega S.A. de C.V.</strong></p>
+			<p><span class="info-label">Email:</span> <span class="info-content">inssa@prodigy.net.mx</span></p>
+			<p><span class="info-label">Phone:</span> <span class="info-content">55-55-13-85-38</span></p>
+			<p><span class="info-label">&nbsp;</span> <span class="info-content">55-55-13-96-42</span></p>
+			<p><span class="info-label">Address:</span> <span class="info-content">Avenida Taxqueña #1970 Altos, Colonia</span></p>
+			<p><span class="info-label">&nbsp;</span> <span class="info-content">Colonia San Francisco Culhuacan Coyoacan 04260 CDMX</span></p>
+		</section>
+    <footer class="container">
+        <small><a href="#">Terms & Conditions</a> • <a href="#">Privacy Policy</a></small>
+    </footer>
+	<script defer src="cart.js"></script>
+	<div id="cart-message" style="display: none;"></div>
+</body>
+</html>
+

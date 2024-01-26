@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Shopping list</title>
+</head>
+<body>
+    <button type="button" onclick="window.location.href='index_en.html'">back to main page</button>
+    <main class="container">
+        <h2>Shopping list</h2>
+        <div id="cart-items">
+            <!-- Aquí se añadirán los productos seleccionados -->
+            <form id="new-user-form" class="form-horizontal">
+                <div class="form-group">
+                    <label for="product-type">Item 1</label>
+                    <input type="text" id="item1" name="item1" aria-label="Item 1" required />
+                </div>  
+            </form>
+        </div>
+        <div id="order-summary">
+            <!-- Resumen del pedido y total -->
+        </div>
+        <div id="checkout-form">
+            <!-- Formulario de detalles de envío y pago -->
+            <!-- Implementa los campos necesarios para la dirección, método de pago, etc. -->
+        </div>
+        <button type="button" onclick="placeOrder()">Finish order</button>
+    </main>
+    <script src="cart.js"></script>
+</body>
+</html>
