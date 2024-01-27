@@ -1,4 +1,5 @@
 let cart = [];
+const lang = document.documentElement.lang;
 
 function addToCart(productName, price, pieces, lang) {
     // Verifica si la cantidad es válida
@@ -51,64 +52,78 @@ function showAddedItems(productName, price, pieces){
 
 function removeFromCart(index) {
     cart.splice(index, 1); // Eliminar artículo del carrito
+    // Save the updated cart array to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
     updateCartDisplay(); // Actualizar la visualización del carrito
 }
 
 function updateCartDisplay() {
-    // Actualiza la visualización del carrito de compras
-    // Encuentra el elemento en tu HTML donde deseas mostrar los detalles del carrito
+    //const lang = document.documentElement.lang; // Retrieve the page's language setting
+
+    // Find the element in your HTML where you want to display the cart details
     const cartDisplay = document.getElementById('cart-items');
     if (!cartDisplay) return;
 
-    // Vacía el contenido actual
+    // Clear the current content
     cartDisplay.innerHTML = '';
 
-    // Calcular el total
+    // Calculate the total
     let total = 0;
 
-    // Itera sobre los elementos del carrito y crea elementos HTML para cada uno
+    // Iterate over the cart items and create HTML elements for each
     cart.forEach((item, index) => {
-        // ... creación de elementos existentes ...
         const itemElement = document.createElement('div');
         itemElement.className = 'cart-item';
 
         const nameElement = document.createElement('p');
-        nameElement.textContent = `Producto: ${item.productName}`;
-
         const priceElement = document.createElement('p');
-        priceElement.textContent = `Precio: ${item.price}ct por pieza`;
-
         const quantityElement = document.createElement('p');
-        quantityElement.textContent = `Cantidad: ${item.pieces} piezas`;
-
-        const subtotal = item.price * item.pieces;
-        total += subtotal;
         const subtotalElement = document.createElement('p');
-        subtotalElement.textContent = `Subtotal: ${subtotal}ct`;
 
-        // Añadir los elementos al contenedor del artículo
+        const subtotal = (item.price * item.pieces) / 100;
+        total += subtotal;
+
+
+
+        if (lang === 'es') {
+            nameElement.textContent = `Producto: ${item.productName}`;
+            priceElement.textContent = `Precio: ${item.price}ct por pieza`;
+            quantityElement.textContent = `Cantidad: ${item.pieces} piezas`;
+            subtotalElement.textContent = `Subtotal: ${subtotal}$`;
+        } else if (lang === 'en') {
+            nameElement.textContent = `Product: ${item.productName}`;
+            priceElement.textContent = `Price: ${item.price}ct each`;
+            quantityElement.textContent = `Quantity: ${item.pieces} pieces`;
+            subtotalElement.textContent = `Subtotal: ${subtotal}$`;
+        }
+
+        // Add elements to the item container
         itemElement.appendChild(nameElement);
         itemElement.appendChild(priceElement);
         itemElement.appendChild(quantityElement);
         itemElement.appendChild(subtotalElement);
 
-        // Añadir el artículo al display del carrito
-        cartDisplay.appendChild(itemElement);
-        // Botón para eliminar artículo
+        subtotalElement.className = 'subtotal';
+        
+        // Add remove button
         const removeButton = document.createElement('button');
-        removeButton.textContent = 'Eliminar';
-        removeButton.onclick = function() { removeFromCart(index); }; // Asignar función para eliminar
+        removeButton.textContent = lang === 'es' ? 'Eliminar' : 'Delete';
+        removeButton.onclick = function() { removeFromCart(index); };
 
-        itemElement.appendChild(removeButton); // Añadir botón al elemento del artículo
-        cartDisplay.appendChild(itemElement); // Añadir elemento al display del carrito
+        itemElement.appendChild(removeButton);
+
+        // Add item to the cart display
+        cartDisplay.appendChild(itemElement);
     });
 
-    // Mostrar el total
+    // Display the total
     const totalDisplay = document.getElementById('total');
     if (totalDisplay) {
-        totalDisplay.textContent = `Total: ${total}ct`;
+        totalDisplay.textContent = `Total: ${total}$`;
     }
 }
+
 
 function placeOrder() {
     // Procesa el pedido

@@ -83,6 +83,15 @@ nav a {
     transition: bottom 0.3s, opacity 0.3s; /* Smooth transition for appearing and disappearing */
 }
 
+.total {
+    font-weight: bold;
+    color: #000; /* Optional: change color to make it stand out */
+}
+.subtotal {
+    font-weight: bold;
+    color: #000; /* Optional: change color to make it stand out */
+}
+
 #contact p {
     color: #000000; /* Or any color you prefer */
     opacity: 1; /* Ensures full opacity */
