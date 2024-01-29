@@ -70,7 +70,6 @@ function updateCartDisplay() {
 
     // Calculate the total
     let total = 0;
-
     // Iterate over the cart items and create HTML elements for each
     cart.forEach((item, index) => {
         const itemElement = document.createElement('div');
@@ -92,7 +91,7 @@ function updateCartDisplay() {
             quantityElement.textContent = `Cantidad: ${item.pieces} piezas`;
             subtotalElement.textContent = `Subtotal: ${subtotal}$`;
         } else if (lang === 'en') {
-            nameElement.textContent = `Product: ${item.productName}`;
+            itemElement.className = 'cart-item';
             priceElement.textContent = `Price: ${item.price}ct each`;
             quantityElement.textContent = `Quantity: ${item.pieces} pieces`;
             subtotalElement.textContent = `Subtotal: ${subtotal}$`;
@@ -104,8 +103,6 @@ function updateCartDisplay() {
         itemElement.appendChild(quantityElement);
         itemElement.appendChild(subtotalElement);
 
-        subtotalElement.className = 'subtotal';
-        
         // Add remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = lang === 'es' ? 'Eliminar' : 'Delete';
@@ -122,6 +119,7 @@ function updateCartDisplay() {
     if (totalDisplay) {
         totalDisplay.textContent = `Total: ${total}$`;
     }
+
 }
 
 
