@@ -33,7 +33,7 @@
 			<!-- Fila de Productos -->
 			<div class="row">
 				<!-- Producto 1 -->
-				<figure class="product">
+				<figure class="product1">
 					<figcaption><a href="#" target="_blank">Container 1</a></figcaption>
 					<img src="https://www.sajoplast.com.co/images/producto/envase-1-galon-3.jpg" alt="Botellas de Plástico" />
 					<p>Description Container 1: This container is ideal for...</p>
@@ -41,12 +41,12 @@
 						<p>Price: 10ct/piece</p>
 						<label for="quantity">Quantity:</label>
 						<input type="number" id="quantity1" name="quantity" min="200"  placeholder="Min 200 pieces">
-						<button type="button" onclick="addToCart('Container 1', 10, document.getElementById('quantity1').value,'en')">Add to the shop list</button>
+						<button type="button" onclick="addToCart('Container 1', 10, document.getElementById('quantity1').value,'en', document.querySelector('.product1 img').src)">Add to the shop list</button>
 					</div>					
 				</figure>
 
 				<!-- Producto 2 -->
-				<figure class="product">
+				<figure class="product2">
 					<figcaption><a href="#" target="_blank">Container 2</a></figcaption>
 					<img src="https://www.fumisan.es/11917-large_default/botella-biberon-cocina-rojo-ketchup-salsas.jpg" alt="Botellas de Plástico" />
 					<p>Description Container 2: This bottle is perfect for...</p>
@@ -54,12 +54,12 @@
 						<p>Price: 10ct/piece</p>
 						<label for="quantity">Quantity:</label>
 						<input type="number" id="quantity2" name="quantity" min="200"  placeholder="Min 200 pieces">
-						<button type="button" onclick="addToCart('Container 2', 10, document.getElementById('quantity2').value,'en')">Add to the shop list</button>
+						<button type="button" onclick="addToCart('Container 2', 10, document.getElementById('quantity2').value,'en',document.querySelector('.product2 img').src)">Add to the shop list</button>
 					</div>					
 				</figure>
 			</div>
 			<div class="row">
-                <figure class="product">
+                <figure class="product3">
                     <figcaption><a href="#" target="_blank">Container 3</a></figcaption>
                     <img src="https://www.carcarepassion.com/pub/media/mf_webp/jpg/media/catalog/product/cache/a6736622c008c37900a2a4cd253338a5/b/o/bote-ketchup-600x600_1.webp" alt="Botellas de Plástico" />
                     <p>Description Container 3: This container is ideal for...</p>
@@ -67,11 +67,11 @@
 						<p>Price: 10ct/piece</p>
 						<label for="quantity">Quantity:</label>
 						<input type="number" id="quantity3" name="quantity" min="200"  placeholder="Min 200 pieces">
-						<button type="button" onclick="addToCart('Container 3', 10, document.getElementById('quantity3').value,'en')">Add to the shop list</button>
+						<button type="button" onclick="addToCart('Container 3', 10, document.getElementById('quantity3').value,'en',document.querySelector('.product3 img').src)">Add to the shop list</button>
 					</div>	                
 				</figure>
 
-                <figure class="product">
+                <figure class="product4">
                     <figcaption><a href="#" target="_blank">Container 4</a></figcaption>
                     <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/f1accf7c-d97b-48f7-ac37-f9a107c1f95c.af772050ef25ee14b94b187d8886e821.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Botellas de Plástico" />
                     <p>Description Container 4: This bottle is perfect for...</p>
@@ -79,7 +79,7 @@
 						<p>Price: 10ct/piece</p>
 						<label for="quantity">Quantity:</label>
 						<input type="number" id="quantity4" name="quantity" min="200"  placeholder="Min 200 pieces">
-						<button type="button" onclick="addToCart('Container 4', 10, document.getElementById('quantity4').value,'en')">Add to the shop list</button>
+						<button type="button" onclick="addToCart('Container 4', 10, document.getElementById('quantity4').value,'en', document.querySelector('.product4 img').src)">Add to the shop list</button>
 					</div>	                
 				</figure>
 

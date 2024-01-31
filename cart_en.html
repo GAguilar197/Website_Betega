@@ -5,11 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Shopping list</title>
+
+    <style>
+        body {
+            background-color: #ffffff; /* Replace with your desired color */
+        }
+        .cart-item {
+            position: relative;
+            align-items: flex-start;
+            background-color: #acacac;
+            border: 1px solid #0f0000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .cart-item p {
+            margin: 5px 0;
+            margin-left: 120px; 
+            color: #000000;
+            font-family: 'Arial', sans-serif;
+        }
+        .cart-item-image {
+            position: absolute; /* Absolute positioning */
+            top: 10px;  /* Adjust as needed */
+            left: 10px; /* Adjust as needed */
+            width: 100px; /* Adjust as needed */
+            height: auto;
+            border-radius: 5px;
+        }
+        .remove-button {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 4px;
+            width: auto; 
+            height: auto;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 600px) {
+            .cart-item {
+                padding: 5px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <button type="button" onclick="window.location.href='index_en.html'">back to main page</button>
     <main class="container">
-        <h2>Shopping list</h2>
+        <h2 style="color: black; font-weight: bold;">Shopping list</h2>
         <div id="cart-items">
             <!-- Aquí se añadirán los productos seleccionados -->
             <form id="new-user-form" class="form-horizontal">
@@ -19,7 +68,7 @@
         </div>
         <div id="order-summary">
             <!-- Resumen del pedido y total -->
-            <p id="total"></p>
+            <p style="color: black; font-weight: bold;" id="total"></p>
         </div>
         <div id="checkout-form">
             <!-- Formulario de detalles de envío y pago -->

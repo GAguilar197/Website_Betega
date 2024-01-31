@@ -1,7 +1,7 @@
 let cart = [];
 const lang = document.documentElement.lang;
-
-function addToCart(productName, price, pieces, lang) {
+let imageURL;
+function addToCart(productName, price, pieces, lang, imageURL) {
     // Verifica si la cantidad es válida
     if (pieces < 200) {
         let message;
@@ -15,6 +15,7 @@ function addToCart(productName, price, pieces, lang) {
         cartMessage.textContent = message;
         cartMessage.style.display = "block";
         cartMessage.style.color = "red";
+        
     
         setTimeout(() => {
             cartMessage.style.display = "none";
@@ -24,14 +25,14 @@ function addToCart(productName, price, pieces, lang) {
 
     // Añade el producto al carrito
     // Suponiendo que 'cart' es un array que almacena los productos
-    cart.push({ productName, price, pieces});
+    cart.push({ productName, price, pieces, imageURL});
 
     // Actualiza la interfaz del usuario
     updateCartDisplay();
     // Save the updated cart array to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    showAddedItems(productName, price, pieces);
+    showAddedItems(productName, price, pieces, imageURL);
 }
 
 function showAddedItems(productName, price, pieces){
@@ -43,7 +44,12 @@ function showAddedItems(productName, price, pieces){
         cartMessage.textContent = message;
         cartMessage.style.display = "block";
         cartMessage.style.color = "green";
-    
+
+        //Show image
+        // const imgElement = document.createElement('img');
+        // imgElement.src = item.imageUrl; // Assuming each item has an imageUrl property
+        // imgElement.alt = item.productName;
+        // imgElement.className = 'cart-item-image';
         // You can hide the message after a few seconds if desired
         // setTimeout(() => {
         //     cartMessage.style.display = "none";
@@ -80,9 +86,13 @@ function updateCartDisplay() {
         const quantityElement = document.createElement('p');
         const subtotalElement = document.createElement('p');
 
+        const imgElement = document.createElement('img');
+        imgElement.src = item.imageURL; // Assuming each item has an imageUrl property
+        imgElement.alt = item.productName;
+        imgElement.className = 'cart-item-image';
+
         const subtotal = (item.price * item.pieces) / 100;
         total += subtotal;
-
 
 
         if (lang === 'es') {
@@ -91,6 +101,7 @@ function updateCartDisplay() {
             quantityElement.textContent = `Cantidad: ${item.pieces} piezas`;
             subtotalElement.textContent = `Subtotal: ${subtotal}$`;
         } else if (lang === 'en') {
+            nameElement.textContent = `Item: ${item.productName}`;
             itemElement.className = 'cart-item';
             priceElement.textContent = `Price: ${item.price}ct each`;
             quantityElement.textContent = `Quantity: ${item.pieces} pieces`;
@@ -102,10 +113,12 @@ function updateCartDisplay() {
         itemElement.appendChild(priceElement);
         itemElement.appendChild(quantityElement);
         itemElement.appendChild(subtotalElement);
+        itemElement.appendChild(imgElement);
 
         // Add remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = lang === 'es' ? 'Eliminar' : 'Delete';
+        removeButton.className = 'remove-button';
         removeButton.onclick = function() { removeFromCart(index); };
 
         itemElement.appendChild(removeButton);
@@ -117,9 +130,9 @@ function updateCartDisplay() {
     // Display the total
     const totalDisplay = document.getElementById('total');
     if (totalDisplay) {
-        totalDisplay.textContent = `Total: ${total}$`;
+        totalDisplay.textContent = `Total: ${total.toLocaleString('en-US')}$`;
     }
-
+    document.getElementById('cart-items').appendChild(itemElement);
 }
 
 
