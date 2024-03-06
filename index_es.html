@@ -8,8 +8,7 @@
     <title>Plastic Components Showcase</title>
 </head>
 <body>
-    <nav class="container-fluid nav-bar">
-		
+    <nav class="container-fluid nav-bar">	
         <ul>
 			<img src="images\title_logo.png" alt="Betega Logo" style="height: 60px; vertical-align: middle; margin-right: 0px;">			
             <li><strong style="font-size: larger; color: black; font-weight: bold;">Betega S.A. de C.V.</strong></li>
@@ -35,9 +34,11 @@
 			<div class="row">
 				<!-- Producto 1 -->
 				<figure class="product1">
-					<figcaption><a href="#" target="_blank">Envase 1</a></figcaption>
-					<img src="https://www.sajoplast.com.co/images/producto/envase-1-galon-3.jpg" alt="Botellas de Plástico" />
-					<p>Descripción del Contenedor 1: Este contenedor es ideal para...</p>
+					<figcaption><a href="#" target="_blank">Tapa roja 1</a></figcaption>
+					<img src="images\tapa_roja.jpg" alt="Botellas de Plástico" />
+					<p>Tapa 24/400 </p>
+					<p>Pzas./Caja 4000</p>
+					<p>Clave: 240224</p>
 				    <div class="order-options">
 						<p>Precio: 10ct/pieza</p>
 						<label for="quantity">Cantidad:</label>
@@ -48,9 +49,11 @@
 
 				<!-- Producto 2 -->
 				<figure class="product2">
-					<figcaption><a href="#" target="_blank">Envase 2</a></figcaption>
-					<img src="https://www.fumisan.es/11917-large_default/botella-biberon-cocina-rojo-ketchup-salsas.jpg" alt="Botellas de Plástico" />
-					<p>Descripción del Contenedor 2: Esta botella es perfecta para...</p>
+					<figcaption><a href="#" target="_blank">Tapa rosa 1</a></figcaption>
+					<img src="images\tapa_rosa.jpg" alt="Botellas de Plástico" />
+					<p>Tapa 38/? </p>
+					<p>Pzas./Caja 2,000</p>
+					<p>Clave: 240238</p>
 					<div class="order-options">
 						<p>Precio: 10ct/pieza</p>
 						<label for="quantity">Cantidad:</label>
@@ -60,10 +63,13 @@
 				</figure>
 			</div>
 			<div class="row">
+				<!-- Producto 3 -->
                 <figure class="product3">
-                    <figcaption><a href="#" target="_blank">Envase 3</a></figcaption>
-                    <img src="https://www.carcarepassion.com/pub/media/mf_webp/jpg/media/catalog/product/cache/a6736622c008c37900a2a4cd253338a5/b/o/bote-ketchup-600x600_1.webp" alt="Botellas de Plástico" />
-                    <p>Descripción del Contenedor 3: Este contenedor es ideal para...</p>
+                    <figcaption><a href="#" target="_blank">Tapa verde 1</a></figcaption>
+                    <img src="images\tapa_verde.jpg" alt="Botellas de Plástico" />
+					<p>Tapa 38/? </p>
+					<p>Pzas./Caja 2,000</p>
+					<p>Clave: 240238</p>
 				    <div class="order-options">
 						<p>Precio: 10ct/pieza</p>
 						<label for="quantity">Cantidad:</label>
@@ -71,11 +77,13 @@
 						<button type="button" onclick="addToCart('Envase 3', 10, document.getElementById('cantidad3').value,'es',document.querySelector('.product2 img').src)">Agregar al carrito</button>
 					</div>                
 				</figure>
-
+				<!-- Producto 4 -->
                 <figure class="product4">
-                    <figcaption><a href="#" target="_blank">Envase 4</a></figcaption>
-                    <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/f1accf7c-d97b-48f7-ac37-f9a107c1f95c.af772050ef25ee14b94b187d8886e821.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Botellas de Plástico" />
-                    <p>Descripción del Contenedor 4: Esta botella es perfecta para...</p>
+                    <figcaption><a href="#" target="_blank">Tapa azul</a></figcaption>
+                    <img src="images\tapa_azul.jpg" alt="Botellas de Plástico" />
+					<p>Tapa 28/400 </p>
+					<p>Pzas./Caja 2,000</p>
+					<p>Clave: 240228</p>
 				    <div class="order-options">
 						<p>Precio: 10ct/pieza</p>
 						<label for="quantity">Cantidad:</label>
@@ -83,6 +91,39 @@
 						<button type="button" onclick="addToCart('Envase 1', 10, document.getElementById('cantidad4').value,'es',document.querySelector('.product2 img').src)">Agregar al carrito</button>
 					</div>               
 			   </figure>
+			   <div class="row">
+				<!-- Producto 5 -->
+				<figure class="product5">
+					<figcaption><a href="#" target="_blank">Tapa blanca 1</a></figcaption>
+					<img src="images\tapa_blanca.jpg" alt="Botellas de Plástico" />
+					<p>Tapa 28/400 </p>
+					<p>Pzas./Caja 2,000</p>
+					<p>Clave: 240228</p>
+				    <div class="order-options">
+						<p>Precio: 10ct/pieza</p>
+						<label for="quantity">Cantidad:</label>
+						<input type="number" id="cantidad1" name="quantity" min="200"  placeholder="Min 200 piezas">
+						<button type="button" onclick="addToCart('Envase 1', 10, document.getElementById('cantidad1').value, 'es',document.querySelector('.product2 img').src)">Agregar al carrito</button>
+					</div>	
+				</figure>
+
+				<!-- Producto 6 -->
+				<figure class="product6">
+					<figcaption><a href="#" target="_blank">Tapa roja 2</a></figcaption>
+					<img src="images\tapa_roja1.jpg" alt="Botellas de Plástico" />
+					<p>Tapa 28/400 </p>
+					<p>Pzas./Caja 2,000</p>
+					<p>Clave: 240228</p>
+					<div class="order-options">
+						<p>Precio: 10ct/pieza</p>
+						<label for="quantity">Cantidad:</label>
+						<input type="number" id="cantidad2" name="quantity" min="200"  placeholder="Min 200 piezas">
+						<button type="button" onclick="addToCart('Envase 2', 10, document.getElementById('cantidad2').value, 'es',document.querySelector('.product2 img').src)">Agregar al carrito</button>
+					</div>
+				</figure>
+			</div>
+			
+			<!-- Boton Carrito de Compras -->
 			   <button type="button" onclick="window.location.href='cart_es.html'">Carrito de compras</button>
                 <h3><strong style="color: black; font-weight: bold;">Variedad de formas, tamaños y colores</strong></h3>
                 <p>Ofrecemos una amplia gama de formas y tamaños para satisfacer tus necesidades.</p>
